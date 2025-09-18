@@ -301,6 +301,57 @@ npm start
 - Paths aliases para imports limpios
 - Decorators para futura extensibilidad
 
+## 🗄️ Decisión de Base de Datos: PostgreSQL
+
+### ¿Por qué PostgreSQL para esta prueba técnica?
+
+He elegido **PostgreSQL** como base de datos para esta implementación por las siguientes razones técnicas:
+
+#### ✅ **Ventajas para Entornos Profesionales**
+
+- **Robustez Empresarial**: PostgreSQL es ampliamente utilizado en entornos de producción
+- **Compatibilidad**: Refleja mejor las decisiones tecnológicas de aplicaciones reales
+- **Escalabilidad**: Manejo superior de concurrencia y grandes volúmenes de datos
+
+#### ✅ **Características Técnicas Relevantes**
+
+- **ACID Compliance**: Garantías de transacciones robustas
+- **Extensibilidad**: Soporte para JSON, arrays y tipos de datos avanzados
+- **Performance**: Optimizaciones automáticas y índices eficientes
+- **Integridad Referencial**: Constraints y validaciones a nivel de base de datos
+
+#### ✅ **Beneficios para el Desarrollo**
+
+- **PrismaJS Integration**: Excelente soporte y generación de tipos TypeScript
+- **Docker-Friendly**: Fácil containerización para desarrollo y despliegue
+- **Tooling**: Abundantes herramientas de administración y monitoreo
+
+#### 🔄 **Flexibilidad de la Arquitectura Hexagonal**
+
+Gracias a la **Arquitectura Hexagonal** implementada, cambiar de PostgreSQL a otra base de datos (MySQL, MongoDB, etc.) requiere únicamente:
+
+1. Modificar la implementación del repositorio en la capa de infraestructura
+2. Actualizar la configuración de PrismaJS
+3. **La lógica de negocio permanece intacta**
+
+```typescript
+// Solo cambiaríamos esta implementación:
+// src/infrastructure/repositories/PrismaTaskRepository.ts
+// El dominio y aplicación no se ven afectados
+```
+
+### Configuración de PostgreSQL
+
+```bash
+# Variables de entorno para PostgreSQL
+DATABASE_URL="postgresql://username:password@localhost:5432/zurich_tasks_db"
+
+# Docker Compose para desarrollo local
+docker-compose up -d postgres
+```
+
+Esta decisión demuestra el valor de la **Arquitectura Hexagonal**: podemos tomar decisiones de infraestructura sin comprometer la lógica de negocio, manteniendo la aplicación testeable y flexible.
+
 ## 📚 Principios Aplicados
 
 ### SOLID
