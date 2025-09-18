@@ -99,7 +99,7 @@ export class UpdateTaskUseCase {
         updateTaskDto.title
       );
       if (taskWithSameTitle && taskWithSameTitle.id !== id) {
-        throw new DuplicateEntityError("Task", "title", updateTaskDto.title);
+        throw new DuplicateEntityError("Tarea", "título", updateTaskDto.title);
       }
     }
 
