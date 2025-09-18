@@ -205,7 +205,7 @@ npm run prisma:migrate
 # El archivo .env ya está configurado con valores por defecto
 NODE_ENV=development
 PORT=3000
-DATABASE_URL="file:./dev.db"
+DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=publi"
 ```
 
 4. **Ejecutar en desarrollo**
