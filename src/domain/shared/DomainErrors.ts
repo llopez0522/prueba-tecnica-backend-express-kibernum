@@ -33,7 +33,7 @@ export class ValidationError extends DomainError {
  */
 export class DuplicateEntityError extends DomainError {
   constructor(entityName: string, field: string, value: string) {
-    super(`${entityName} with ${field} '${value}' already exists`);
+    super(`${entityName} con el ${field} '${value}' ya existe`);
     this.name = "DuplicateEntityError";
   }
 }
