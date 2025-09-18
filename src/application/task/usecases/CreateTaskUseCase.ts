@@ -19,7 +19,7 @@ export class CreateTaskUseCase {
       createTaskDto.title
     );
     if (existingTask) {
-      throw new DuplicateEntityError("Task", "title", createTaskDto.title);
+      throw new DuplicateEntityError("La tarea", "título", createTaskDto.title);
     }
 
     // Create domain entity
