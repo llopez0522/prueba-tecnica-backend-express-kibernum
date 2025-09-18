@@ -40,7 +40,7 @@ export class App {
     // CORS middleware
     this.app.use(
       cors({
-        origin: Config.isDevelopment ? true : [],
+        origin: "*",
         credentials: true,
       })
     );
