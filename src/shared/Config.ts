@@ -21,4 +21,7 @@ export class Config {
   static get isProduction(): boolean {
     return this.NODE_ENV === "production";
   }
+  static get SWAGGER_PRODUCTION_URL(): string {
+    return process.env.SWAGGER_PRODUCTION_URL || "http://localhost:3000";
+  }
 }
