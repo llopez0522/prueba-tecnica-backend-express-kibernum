@@ -40,7 +40,7 @@ const swaggerDefinition = {
       description: "Servidor de desarrollo",
     },
     {
-      url: `${Config.SWAGGER_PRODUCTION_URL}/api-docs`,
+      url: `${Config.SWAGGER_PRODUCTION_URL}`,
       description: "Servidor de producción",
     },
   ],
